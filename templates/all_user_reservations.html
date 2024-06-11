@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+</head>
+<body>
+    <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: center;">First_Name</th>
+                <th style="text-align: center;">Last_Name</th>
+                <th style="text-align: center;">Movie_Title</th>
+                <th style="text-align: center;">Date_From</th>
+                <th style="text-align: center;">Reserved_Days</th>
+                <th style="text-align: center;">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for reservation in reservations %}
+            <tr>
+                <td style="text-align: center; color: blueviolet">{{ reservation.user.first_name }}</td>
+                <td style="text-align: center; color: blueviolet">{{ reservation.user.last_name }}</td>
+                <td style="text-align: center; color: blueviolet">{{ reservation.movie.title }}</td>
+                <td style="text-align: center; color: blueviolet">{{ reservation.date_from }}</td>
+                <td style="text-align: center; color: blueviolet">{{ reservation.date_to }}</td>
+                <td style="text-align: center; color: blueviolet">{{ reservation.cost }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br>
+<a href="/">Powrót</a>
+</body>
+</html>

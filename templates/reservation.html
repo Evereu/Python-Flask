@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+</head>
+<body>
+ <h1>Movies List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in movies %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+  <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in users %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.first_name }}</td>
+                <td>{{ item.last_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Dodaj rezerwacje</h1>
+    <form method="POST">
+        <label for="movie_title">Nazwa filmu:</label><br>
+         <input type="text" id="movie_title" name="movie_title" required><br><br>
+
+         <label for="date_from">DataOd:</label><br>
+         <input type="date" id="date_from" name="date_from" required><br><br>
+
+         <label for="days">Ilość dni:</label><br>
+         <input type="text" id="days" name="days" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form><br>
+
+
+<a href="/index">Powrót</a>
+
+</body>
+</html>

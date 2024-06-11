@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in users %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.first_name }}</td>
+                <td>{{ item.last_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Zarezerwuj</h1>
+    <form method="POST">
+
+         <label for="id">id użytkownika:</label><br>
+         <input type="text" id="id" name="id" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form><br>
+
+    <h1>Sprawdz rezerwacje wszystkich userów</h1>
+<li><a href="/all_user_reservations">Rezerwacje wszystkich userów</a></li>
+
+</body>
+</html>
